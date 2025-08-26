@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Week 3/Disturbance Rejection.md",
+                "file": "Assignment A.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Disturbance Rejection"
+              "title": "Assignment A"
             }
           }
         ]
@@ -170,6 +170,10 @@
   },
   "active": "2076c14013b06d93",
   "lastOpenFiles": [
+    "Week 3/Guidance.md",
+    "Week 3/PGNC Overview.md",
+    "Week 3/Route Planning.md",
+    "Week 3/Disturbance Rejection.md",
     "Week 3/-Guidance and Control Concepts-.md",
     "Week 2/State Space Modelling.md",
     "Week 2/-State Space Modelling-.md",
@@ -189,12 +193,8 @@
     "Week 5/Motivation.md",
     "Week 4/Motion Control.md",
     "Week 5",
-    "Week 3/Route Planning.md",
     "Week 4",
-    "Week 3/PGNC Overview.md",
     "Guidance (Week 3).md",
-    "Week 3/Guidance.md",
-    "Week 3/Disturbance Rejection.md",
     "Week 3",
     "Week 2",
     "Week_1/Unit Introduction.md",
