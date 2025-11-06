@@ -19,4 +19,4 @@ Measurements depend on the reference frame. To compare or combine data (from dif
 - Keep a consistent **axis convention** (match course/industry standard).
 - Sequence matters: $\text{rot}(Z)\text{rot}(Y) \neq \text{rot}(Y)\text{rot}(Z)$.
 
-_See also: [Inertial Sensors.md] for body↔navigation use in INS._
+_See also: [[Inertial Sensors]] for body↔navigation use in INS._

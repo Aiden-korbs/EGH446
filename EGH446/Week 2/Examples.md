@@ -79,7 +79,9 @@ This gives us:
 - $D = 0$
 
 
-## convert this state-space model into a transfer function, 
+---
+## Example 2: SISO State-Space to Transfer Function
+convert this state-space model into a transfer function, 
 ![[Pasted image 20251104140353.png|300]]
 $$G(s) = C(sI - A)^{-1}B + D$$
 
@@ -100,8 +102,7 @@ First, let's identify your matrices from the image:
 
 $sI - A = s\begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} - \begin{bmatrix} -4 & -1 \\ 3 & -1 \end{bmatrix}$
 
-$sI - A = \begin{bmatrix} s & 0 \\ 0 & s \end{bmatrix} - \begin{bmatrix} -4 & -1 \\ 3 & -1 \end{bmatrix}$
-
+$sI - A = \begin{bmatrix} s & 0 \\ 0 & s \end{bmatrix} - \begin{bmatrix} -4 & -1 \\ 3 & -1 \end{ReadMe>
 $sI - A = \begin{bmatrix} s+4 & 1 \\ -3 & s+1 \end{bmatrix}$
 
 ---
@@ -159,3 +160,70 @@ $G(s) = \frac{s}{s^2 + 5s + 7} + 0$
 The transfer function $G(s)$ is:
 
 $$G(s) = \frac{s}{s^2 + 5s + 7}$$
+
+---
+## Example 3: MIMO State-Space to Transfer Function Matrix
+
+This converts a Multi-Input, Multi-Output (MIMO) system into its equivalent transfer function matrix.
+
+The formula is the same, but the matrices have different dimensions:
+$$
+H(s) = C(sI - A)^{-1}B + D
+$$
+
+### Step 1: Identify $A, B, C, D$ Matrices
+
+- $A = \begin{bmatrix} -1 & -1 \\ 6.5 & 0 \end{bmatrix}$
+- $B = \begin{bmatrix} 1 & 1 \\ 1 & 0 \end{bmatrix}$
+- $C = \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix}$
+- $D = \begin{bmatrix} 0 & 0 \\ 0 & 0 \end{bmatrix}$
+
+---
+
+### Step 2: Calculate $(sI - A)$
+
+$sI - A = s\begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} - \begin{bmatrix} -1 & -1 \\ 6.5 & 0 \end{bmatrix}$
+$sI - A = \begin{bmatrix} s+1 & 1 \\ -6.5 & s \end{bmatrix}$
+
+---
+
+### Step 3: Find the inverse, $(sI - A)^{-1}$
+
+1.  **Determinant:**
+    $det(sI - A) = (s+1)(s) - (1)(-6.5) = s^2 + s + 6.5$
+
+2.  **Inverse:**
+    $(sI - A)^{-1} = \frac{1}{s^2 + s + 6.5} \begin{bmatrix} s & -1 \\ 6.5 & s+1 \end{bmatrix}$
+
+---
+
+### Step 4: Calculate $H(s) = C \cdot (sI - A)^{-1} \cdot B$
+
+We will multiply $C \cdot [(sI - A)^{-1} \cdot B]$.
+
+**4.1: $(sI - A)^{-1} \cdot B$**
+$\left( \frac{1}{s^2 + s + 6.5} \begin{bmatrix} s & -1 \\ 6.5 & s+1 \end{bmatrix} \right) \cdot \begin{bmatrix} 1 & 1 \\ 1 & 0 \end{bmatrix}$
+$= \frac{1}{s^2 + s + 6.5} \begin{bmatrix} (s)(1) + (-1)(1) & (s)(1) + (-1)(0) \\ (6.5)(1) + (s+1)(1) & (6.5)(1) + (s+1)(0) \end{bmatrix}$
+$= \frac{1}{s^2 + s + 6.5} \begin{bmatrix} s-1 & s \\ s+7.5 & 6.5 \end{bmatrix}$
+
+**4.2: $C \cdot [\text{result from 4.1}]$**
+$H(s) = \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} \cdot \left( \frac{1}{s^2 + s + 6.5} \begin{bmatrix} s-1 & s \\ s+7.5 & 6.5 \end{bmatrix} \right)$
+Since $C$ is the identity matrix, the result is unchanged:
+$H(s) = \frac{1}{s^2 + s + 6.5} \begin{bmatrix} s-1 & s \\ s+7.5 & 6.5 \end{bmatrix}$
+
+---
+
+### Final Answer
+
+The transfer function matrix $H(s) = \begin{bmatrix} H_{11}(s) & H_{12}(s) \\ H_{21}(s) & H_{22}(s) \end{bmatrix}$ is:
+$$
+H(s) = \begin{bmatrix}
+\frac{s-1}{s^2 + s + 6.5} & \frac{s}{s^2 + s + 6.5} \\
+\frac{s+7.5}{s^2 + s + 6.5} & \frac{6.5}{s^2 + s + 6.5}
+\end{bmatrix}
+$$
+Where:
+- $H_{11}(s) = \frac{s-1}{s^2 + s + 6.5}$
+- $H_{12}(s) = \frac{s}{s^2 + s + 6.5}$
+- $H_{21}(s) = \frac{s+7.5}{s^2 + s + 6.5}$
+- $H_{22}(s) = \frac{6.5}{s^2 + s + 6.5}$

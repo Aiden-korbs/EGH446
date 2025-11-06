@@ -20,4 +20,4 @@
 - INS alone **drifts**; combine with exteroceptive sensors (e.g., GNSS, vision) via estimation (e.g., Kalman filters).
 - Maintain accurate frame definitions (body↔nav) and temperature compensation.
 
-_See also: [Coordinate Systems.md] for frames used in INS._
+_See also: [[Coordinate Systems]] for frames used in INS._
