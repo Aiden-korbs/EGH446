@@ -5,16 +5,10 @@ State-space modelling is an alternative to transfer function methods for describ
 
 A linear time-invariant (LTI) system can be represented by two primary equations:
 
-1. **The State Equation:** Describes the evolution of the system's internal state over time.
-    
-    $$\dot{\mathbf{x}}(t) = A\mathbf{x}(t) + B\mathbf{u}(t)$$
-    
-    
-2. **The Output Equation:** Relates the system's output to its current state and input.
-    
-    $$\mathbf{y}(t) = C\mathbf{x}(t) + D\mathbf{u}(t)$$
-    
-    
+$$\dot{\mathbf{x}}(t) = A\mathbf{x}(t) + B\mathbf{u}(t)$$
+
+1. **The Output Equation:** Relates the system's output to its current state and input.
+$$\mathbf{y}(t) = C\mathbf{x}(t) + D\mathbf{u}(t)$$
 
 ### Components
 
@@ -253,4 +247,4 @@ MATLAB provides tools to create, convert, and simulate state-space models.
     
 - `sys_d = c2d(sys, Ts)`: Converts a continuous-time model `sys` to a discrete-time model `sys_d` with sample time `Ts`.
     
-- `sys_tf = tf(sys)`: Converts a state-space model `sys` into an equivalent transfer function model82.
+- `sys_tf = tf(sys)`: Converts a state-space model `sys` into an equivalent transfer function model.
